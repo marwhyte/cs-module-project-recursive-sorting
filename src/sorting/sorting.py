@@ -4,20 +4,20 @@ def merge(arrA, arrB):
     merged_arr = [0] * elements
 
     # Your code here\
-    a = b = 0
+    countArrA = countArrB = 0
     for i in range(elements):
-        if a >= len(arrA):
-            merged_arr[i] = arrB[b]
-            b += 1
-        elif b >= len(arrB):
-            merged_arr[i] = arrA[a]
-            a += 1
-        elif arrA[a] < arrB[b]:
-            merged_arr[i] = arrA[a]
-            a += 1
+        if countArrA >= len(arrA):
+            merged_arr[i] = arrB[countArrB]
+            countArrB += 1
+        elif countArrB >= len(arrB):
+            merged_arr[i] = arrA[countArrA]
+            countArrA += 1
+        elif arrA[countArrA] < arrB[countArrB]:
+            merged_arr[i] = arrA[countArrA]
+            countArrA += 1
         else:
-            merged_arr[i] = arrB[b]
-            b += 1
+            merged_arr[i] = arrB[countArrB]
+            countArrB += 1
 
     return merged_arr
 
